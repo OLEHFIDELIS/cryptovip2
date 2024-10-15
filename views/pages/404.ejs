@@ -1,0 +1,108 @@
+<%- include("../includes/header") %>
+<body>
+    <!-- preloader  -->
+    <!-- <div id="preloader"></div> -->
+    <!-- Start header -->
+    <%- include("../includes/navbar") %>
+    <!-- End header area -->
+    <main>
+    <!-- Start Breadcrumb Area -->
+        <div class="page-area bread-pd">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-title text-center">
+                            <h2>Error</h2>
+                            <div class="bread-come">
+                                <nav aria-label="breadcrumb ">
+                                    <ol class="breadcrumb purple lighten-4 justify-content-center">
+                                        <li class="breadcrumb-items mr-3"><a class="black-text" href="/">Home</a></li>
+                                        <li class="breadcrumb-items"><a class="black-text" href="/">Error-404</a></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Breadcrumb Area -->
+        <div class="page-head bg-color-2 area-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12">
+                        <div class="error-page">
+                            <div class="error-main-text text-center">
+                                <h1 class="high-text">4<span>0</span>4</h1>
+                                <h2 class="error-easy-text"><%= err.message %></h2>
+                                <h3 class="error-bot">Oops, Somthing Went Wrong!!.</h3>
+                                <a  class="error-btn" href="/">Back Homepage</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!-- Start Subscribe area -->
+       <div class="subscribe-area bg-color">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <div class="subscribe-inner">
+                        <div class="subdcribe-content">
+                            <div class="section-headline text-center">
+                                <h2>Payment methods</h2>
+                                <!-- <p>Help agencies to define their new business objectives and then create professional software.</p> -->
+                            </div>
+                            <div class="subs-form">
+                                <form id="contactForm" method="POST" action="contact.php" class="contact-form">
+                                    <input type="email" class="email form-control" id="email" placeholder="Email" required data-error="Please enter your email">
+                                    <button type="submit" id="submit" class="add-btn">Subscribe</button>
+                                </form>  
+                            </div>
+                            <div class="brand-content">
+                                <div class="brand-carousel owl-carousel">
+                                    <div class="single-brand-item">
+                                        <a href="/login"><img src="/images/1.png" alt=""></a>
+                                    </div>
+                                    <div class="single-brand-item">
+                                        <a href="/login"><img src="/images/2.png" alt=""></a>
+                                    </div>
+                                    <div class="single-brand-item">
+                                        <a href="/login"><img src="/images/3.png" alt=""></a>
+                                    </div>
+                                    <div class="single-brand-item">
+                                        <a href="/login"><img src="/images/4.png" alt=""></a>
+                                    </div>
+                                    <div class="single-brand-item">
+                                        <a href="/login"><img src="/images/7.png" alt=""></a>
+                                    </div>
+                                    <div class="single-brand-item">
+                                        <a href="/login"><img src="/images/8.png" alt=""></a>
+                                    </div>
+                                    <div class="single-brand-item">
+                                        <a href="/login"><img src="/images/5.png" alt=""></a>
+                                    </div>
+                                    <div class="single-brand-item">
+                                        <a href="/login"><img src="/images/6.png" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Subscribe area -->   
+    </main>
+    <!-- Start Footer Area -->
+    <%- include("../includes/footer") %>
+    <!-- End Footer Area -->
+
+   <!-- All JS here -->
+   <%- include("../includes/script") %>
+</body>
+
+</html>

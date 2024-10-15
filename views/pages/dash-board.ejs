@@ -1,0 +1,128 @@
+<%- include("../includes/header") %>
+
+<body>
+    <!-- preloader  -->
+    <!-- <div id="preloader"></div> -->
+    <!-- Start header -->
+    <!-- <div class="overlay"></div> -->
+    <%- include("../includes/navbar") %>
+<!-- End header area -->
+    <main>
+    <!-- Start Breadcrumb Area -->
+        <div class="page-area bread-pd">
+            
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-title text-center">
+                            <h2>Dashboard</h2>
+                            <div class="bread-come">
+                                <nav aria-label="breadcrumb ">
+                                    <ol class="breadcrumb purple lighten-4 justify-content-center">
+                                        <li class="breadcrumb-items mr-3"><a class="black-text" href="/">Home</a><img style="width: 0.8rem; margin: 5px;" src="/images/arrow.png" alt=""></li>
+                                        <li class="breadcrumb-items"><a class="black-text" href="#">Dashboard</a></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Breadcrumb Area -->
+         <div class="notify-overlay"></div>
+         <div class="dsahboard-area bg-color area-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-4">
+                        <aside class="sidebar">
+                            <div class="dashboard-side">
+                                <div class="dashboard-head">
+                                    <div class="dashboard-profile">
+                                        <img src="/images/profile.png" alt="">
+                                        <div class="profile-content">
+                                            <span class="pro-name"><%= userInfo.username %></span>
+                                            <span class="pro-number"><%= userInfo.email %></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard-menu">
+                                    <ul>
+                                        <li class="active"><a href="/<%=userInfo.id%>/dashboard" ><img src="/images/dashboard2.png" alt="">dashboard</a></li>
+                                        <li><a href="/<%=userInfo.id%>/deposit"><img src="/images/savings.png" alt="">Deposit Money</a></li>
+                                        <li><a href="/<%=userInfo.id%>/withdrawal"><img src="/images/withdraw.png" alt="">Withdraw Money</a></li>
+                                        <li><a href="/<%=userInfo.id%>/investment"><img src="/images/earning.png" alt=""></i>Total Investment</a></li>
+                                        <li><a href="/<%=userInfo.id%>/transaction"><img src="/images/money-exchange.png" alt=""></i>Transactions</a></li>
+                                        <!-- <li><a href="/<%=userInfo.id%>/notification"><img src="/images/notification.png" alt="">Notifications</a></li> -->
+                                        <li><a href="/<%=userInfo.id%>/info"><img src="/images/setting.png" alt="">Settings</a></li>
+                                        <li><a href="/logout"><img src="/images/logout.png" alt="">Log out</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-8">
+
+                        <div class="row dashboard-content">
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="single-dash-head">
+                                    <div class="dashboard-amount">
+                                        <div class="amount-content">
+                                            <span class="pro-name">Account Balace</span>
+                                            <span class="pro-money">USD $<%= userInfo.accounBalance %></span>
+                                        </div>
+                                        <div class="invest-tumb">
+                                            <img style="width: 5rem;" src="/images/savings 2.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="single-dash-head">
+                                    <div class="dashboard-amount">
+                                        <div class="amount-content">
+                                            <span class="pro-name">Total Deposit</span>
+                                            <span class="pro-money">USD $<%= userInfo.totalDeposit %></span>
+                                        </div>
+                                        <div class="invest-tumb">
+                                            <img style="width: 5rem;" src="/images/withdraw 2.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="single-dash-head">
+                                    <div class="dashboard-amount">
+                                        <div class="amount-content">
+                                            <span class="pro-name">Total Withdraw</span>
+                                            <span class="pro-money">USD $<%= userInfo.totalWithrawal %></span>
+                                        </div>
+                                        <div class="invest-tumb">
+                                            <img style="width: 5rem;" src="/images/investment.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div><div class="row">
+                            <div class="col-lg-12" >
+                                <div class="currency_live">
+                                    <iframe  style="width:100%; height: 30rem; border: #030834; " src="https://widget.coinlib.io/widget?type=full_v2&amp;theme=&amp;cnt=6&amp;pref_coin_id=1505&amp;graph=yes"></iframe>
+                                </div>
+                            </div>
+                        </div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Start Footer Area -->
+    <%- include("../includes/footer2") %>
+    <!-- End Footer Area -->
+
+    <!-- All JS here -->
+    <%- include("../includes/script") %>
+</body>
+
+</html>

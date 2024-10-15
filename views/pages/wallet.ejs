@@ -1,0 +1,102 @@
+<%- include("../includes/header") %>
+ 
+</head>
+
+<body class="fixed-nav sticky-footer" id="page-top"  >
+  <%- include("../includes/navbar") %>
+  <div class="content-wrapper" style="padding-top: 10rem;" >
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Deposit Confirmation </li>
+      </ol>
+	 		<h2></h2>
+			<div class="box_general">
+			
+			<div class="header_box version_2">
+				<h2>Please confirm your deposit</h2>
+			</div>
+			<div class="row">
+				
+				<div class="col-md-12 add_top_30">
+ 
+
+ <%= wallet.address %><br><br>
+<div class="table-responsive">
+<table cellspacing=0 cellpadding=2 class="table table-success table-striped table-bordered">
+<tr>
+ <th>Plan:</th>
+ <td><%= plan.name %></td>
+</tr>
+<tr>
+ <th>Profit:</th>
+ <td><%= plan.interestRate %>% Daily  </td>
+</tr>
+<tr>
+ <th>Principal Return:</th>
+ <td>Yes</td>
+</tr>
+<tr>
+  <th>Adress Type</th>
+  <td><%= wallet.currency %></td>
+ </tr>
+<tr>
+ <th>Credit Amount:</th>
+ <td>$<%= amount %></td>
+</tr>
+<tr>
+ <th>Deposit Fee:</th>
+ <td>0.00% + $0.00 (min. $0.00 max. $0.00)</td>
+</tr>
+<tr>
+ <th>Debit Amount:</th>
+ <td>$<%= amount %></td>
+</tr>
+</table>
+<br><br>
+<form name="spend" method="post" action="/<%=userInfo.id%>/deposit/userinvestment">
+<input type="hidden" name="id" value="<%= userInfo.id %>">
+<input type="hidden" name="planName" value="<%=plan.name %>">
+<input type="hidden" name="type" value="deposit">
+<input type="hidden" name= "ecurrency" value="<%= wallet.currency %>">
+<input type="hidden" name= "intrestRate" value= "<%=plan.intrestRate %>">
+<input type="hidden" name= "endDate" value= "<%=plan.duration %>">
+<input type="hidden" name= "investmentPlanId" value= "<%=plan.id %>">
+<INPUT type="hidden" name="amount" value="<%= amount %>">
+
+<br><input type=submit value="Save" class="btn btn-success"> &nbsp;
+<input type=button class="btn btn-success" value="Cancel" onclick="document.location='/<%=userInfo.id%>/deposit'">
+</form>
+
+</div></div></div></div>
+	  </div>
+	  <!-- /.container-fluid-->
+   	</div>
+    <!-- /.container-wrapper-->
+    <%- include("../includes/footer2") %>
+    <!-- Scroll to Top Button-->
+    <!-- Logout Modal-->
+  
+    <!-- Bootstrap core JavaScript-->
+    <%- include("../includes/script") %>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+	<script src="vendor/jquery.selectbox-0.2.js"></script>
+	<script src="vendor/retina-replace.min.js"></script>
+	<script src="vendor/jquery.magnific-popup.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/admin.js"></script>
+	<!-- Custom scripts for this page-->
+    <script src="js/admin-charts.js"></script>
+
+</body>
+</html>

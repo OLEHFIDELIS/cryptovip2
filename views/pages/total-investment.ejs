@@ -1,0 +1,157 @@
+<%- include("../includes/header") %>
+
+    <body>
+        <!-- preloader  -->
+        <div id="preloader"></div>
+        <!-- Start header -->
+        <div class="overlay"></div>
+        <%- include("../includes/navbar") %>
+            <!-- End header area -->
+            <main>
+                <!-- Start Breadcrumb Area -->
+                <div class="page-area bread-pd">
+                    <div class="breadcumb-overlay"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="breadcrumb-title">
+                                    <h2>User Investment </h2>
+                                    <div class="bread-come">
+                                        <nav aria-label="breadcrumb ">
+                                            <ol class="breadcrumb purple lighten-4">
+                                                <li class="breadcrumb-items"><a class="black-text"
+                                                        href="/">Home</a><img
+                                                        style="width: 0.8rem; margin: 5px;" src="/images/arrow.png"
+                                                        alt=""></li>
+                                                <li class="breadcrumb-items"><a class="black-text" href="#">User
+                                                        Investment </a></li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Breadcrumb Area -->
+                <div class="notify-overlay"></div>
+                <div class="dsahboard-area bg-color area-padding">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-3 col-md-4">
+                                <aside class="sidebar">
+                                    <div class="dashboard-side">
+                                        <div class="dashboard-head">
+                                            <div class="dashboard-profile">
+                                                <img src="/images/profile.png" alt="">
+                                                <div class="profile-content">
+                                                    <span class="pro-name"><%= userInfo.username %></span>
+                                                    <span class="pro-number"><%= userInfo.email %></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="dashboard-menu">
+                                            <ul>
+                                                <li><a href="/<%=userInfo.id%>/dashboard"><img
+                                                            src="/images/dashboard2.png" alt="">dashboard</a></li>
+                                                <li><a href="/<%=userInfo.id%>/deposit"><img src="/images/savings.png"
+                                                            alt="">Deposit Money</a></li>
+                                                <li><a href="/<%=userInfo.id%>/withdrawal"><img src="/images/withdraw.png"
+                                                            alt="">Withdraw Money</a></li>
+                                                <li class="active"><a href="/<%=userInfo.id%>/investment"><img
+                                                            src="/images/earning.png" alt=""></i>Total Investment</a>
+                                                </li>
+                                                <li><a href="/<%=userInfo.id%>/transaction"><img
+                                                            src="/images/money-exchange.png" alt=""></i>Transactions</a>
+                                                </li>
+                                                
+                                                <li><a href="/<%=userInfo.id%>/info"><img src="/images/setting.png"
+                                                            alt="">Settings</a></li>
+                                                <li><a href="/logout"><img src="/images/logout.png" alt="">Log out</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                            <div class="col-xl-9 col-lg-9 col-md-8">
+                                <div class="row dashboard-content">
+                                    <div class="box_general">
+			
+                                        <div class="header_box version_2">
+                                            <h2>Your Deposits</h2>
+                                        </div>
+                                        <div class="row">
+                                            
+                                            <div class="col-md-12 add_top_30"> 
+                            
+                            <b>Total: $<%= userInfo.totalEarned %></b><br><br>
+                            <div class="table-responsive">
+                            <table cellspacing=1 cellpadding=2 border=0 width=100% class=line><tr><td class=item>
+                            <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
+                            <tr>
+                             <!-- <td colspan=4 align=center><b>STANDARD COPY TRADING</b></td> -->
+                            </tr>
+                            <tr>
+                                <th class=inheader>Plans
+                                </td>
+                                <th class=inheader>status</td>
+                                <th class=inheader width=200>Deposit Amount</td>
+                                <th class=inheader width=100 nowrap>
+                                <nobr>Daily Profit (%)</nobr></td>
+                            </tr>
+                            <!-- <tr>
+                                <td class=item>PlanS</td>
+                                <td class=item>Status</td>
+                                <td class=item align=right>$500.00 and more</td>
+                                <td class=item align=right>4.00</td>
+                                </tr> -->
+                                <% userinvestments.forEach(userinvestment=> { %>
+                                <tr>
+                                <td class=item>
+                                <%= userinvestment.planName %>
+                                </td>
+                                <td class=item align=left>
+                                <%= userinvestment.status %>
+                                </td>
+                                <td class=item align=>
+                                $<%= userinvestment.amount %>
+                                </td>
+                                <td class=item align=right>
+                            $<%= userinvestment.interestEarned %>
+                                </td>
+                                </tr>
+                                <% }) %>
+                            </table>
+
+                            
+                           
+                            <br>
+                            </td></tr></table>
+                            <br>
+                            </div></div></div></div>
+                                  </div>
+                                  <!-- /.container-fluid-->
+                                   </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- Start Footer Area -->
+            <%- include("../includes/footer2") %>
+                <!-- End Footer Area -->
+
+                <!-- All JS here -->
+
+                <!-- modernizr JS -->
+                <%- include("../includes/script") %>
+    </body>
+
+    </html>
