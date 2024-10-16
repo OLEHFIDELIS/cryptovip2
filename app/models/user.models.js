@@ -15,22 +15,22 @@ const UserShema = new Schema({
         unique: true
     },
     accounBalance: {
-        type: Number, 
+        type: mongoose.Types.Decimal128,
         required: true,
         default: 0
     },
     totalDeposit: {
-       type: Number,
-       required: true,
-       default: 0
+        type: mongoose.Types.Decimal128,
+        required: true,
+        default: 0
     },
     totalWithrawal: {
-        type: Number,
+        type: mongoose.Types.Decimal128,
         required: true,
         default: 0
     },
     totalEarned: {
-        type: Number,
+        type: mongoose.Types.Decimal128,
         required: true,
         default: 0
     },

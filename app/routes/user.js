@@ -133,7 +133,6 @@ router.get("/info",isAuthenticated,catchAsync(async (req, res)=> {
     });
 }));
 
-
 router.post("/info", isAuthenticated, catchAsync(async (req, res) => {
     const { fullName, email, phone } = req.body;
     const result = await User.findByIdAndUpdate(
