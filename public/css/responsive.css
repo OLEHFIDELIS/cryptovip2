@@ -660,6 +660,7 @@ blockquote::before {
 }  
 .dashboard-side {
     margin-bottom: 30px;
+    display: none;
 }    
 .dashboard-right-menus li .notification-area {
     left: -85px;
@@ -694,7 +695,6 @@ blockquote::before {
     
     
     
-    
 
 }
 
@@ -716,8 +716,10 @@ blockquote::before {
 }
 .user-info-inner_list li .caption {
     width: 33%;
-}    
-    
+}
+.dashboard-side {
+    display: none;
+}   
     
     
     
